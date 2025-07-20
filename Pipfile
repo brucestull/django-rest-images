@@ -12,6 +12,7 @@ black = "*"
 isort = "*"
 pillow = "*"
 requests = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
