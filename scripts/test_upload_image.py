@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import requests
 
-url = "http://localhost:8000/upload/"
+url = "http://localhost:8000/images/"
 
 # Path to your local image file
 file_path = "../test_images/test_image_717_482.jpeg"

@@ -6,11 +6,11 @@
 
 Provide the code for a Django REST app with a model `Image` that can store an image file. I don't need this to be in production. It is only needed to work locally to check a Python `requests` script I'm creating. The `Image` model does not need any other fields than the one to store the image.
 
-I want to be able to use the URL of `"http://localhost/upload/"` to upload the files using my Python `requests` script. I do not yet need help with the upload via requests script.
+I want to be able to use the URL of `"http://localhost/images/"` to upload the files using my Python `requests` script. I do not yet need help with the upload via requests script.
 
 ## First Response
 
-Here’s a minimal Django REST API setup for uploading images to a local-only endpoint at `http://localhost/upload/`.
+Here’s a minimal Django REST API setup for uploading images to a local-only endpoint at `http://localhost/images/`.
 
 ---
 
@@ -100,7 +100,7 @@ from django.urls import path
 from .views import ImageUploadView
 
 urlpatterns = [
-    path('upload/', ImageUploadView.as_view(), name='image-upload'),
+    path('images/', ImageUploadView.as_view(), name='images'),
 ]
 ```
 
@@ -132,8 +132,8 @@ python manage.py runserver
 ```
 
 Your upload endpoint is now available at:
-📍 `http://localhost:8000/upload/`
-(If you want `http://localhost/upload/`, add `--port 80` to your `runserver` command **with sudo on Linux**.)
+📍 `http://localhost:8000/images/`
+(If you want `http://localhost/images/`, add `--port 80` to your `runserver` command **with sudo on Linux**.)
 
 ---
 
@@ -189,7 +189,7 @@ Provide a simple Python requests script to upload a single image to the endpoint
 
 ## Third Response
 
-Here’s a **minimal working `requests` script** to upload a single image file to your local Django REST endpoint at `http://localhost:8000/upload/`:
+Here’s a **minimal working `requests` script** to upload a single image file to your local Django REST endpoint at [`http://localhost:8000/images/`](http://localhost:8000/images/):
 
 ---
 
@@ -198,7 +198,7 @@ Here’s a **minimal working `requests` script** to upload a single image file t
 ```python
 import requests
 
-url = 'http://localhost:8000/upload/'
+url = 'http://localhost:8000/images/'
 
 # Path to your local image file
 file_path = 'test_image.jpg'
