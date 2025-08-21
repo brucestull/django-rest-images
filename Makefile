@@ -29,6 +29,7 @@ migrate:
 
 # Run makemigrations and migrate
 makemigrate: makemigrations migrate
+
 # Run the development server
 runserver:
 	python manage.py runserver
